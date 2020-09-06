@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Experimento: Estímulo Auditivo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/starter-template.css">
+        <script src="js/vue.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Estímulo Auditivo</a>
+    </nav>
+    
+    <main role="main" class="container">
+        
+      <div id="app" class="starter-template">
+        <h2>Experimento: Estímulo Auditivo.</h2>
+        
+        <div id="cuadro-experimento">
+            
+            <svg width="250px" height="120" viewBox="0 0 16 16" class="bi bi-soundwave" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8.5 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11a.5.5 0 0 1 .5-.5zm-2 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm-6 1.5A.5.5 0 0 1 5 6v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm8 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm-10 1A.5.5 0 0 1 3 7v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5zm12 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5z"></path>
+              </svg>
+            <audio controls id="beep">
+            <source src="assets/Beep_Short.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="resultado">
+            <ul class="list-group">
+                <li class="list-group-item" v-for="item in resultadoTr">
+                    {{item}} ms
+                </li>
+            </ul>
+            <div v-if="resultadoTr.length == 10">
+                <button class="btn btn-info" @click="crearCsv">Generar Csv</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <button type="button" @click="iniciar" class="btn btn-primary" :disabled="disabledBoton">Iniciar experimento</button>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div>
+            <p class="text-md-center text-success" v-if="resultadoTr.length == 10"> Fin del experimento</p>
+        </div>
+        
+      </div>
+      
+    </main>
+    <script src="js/experimento.js"></script>
+    <script>
+       /* var app = new Vue({
+        el: '#app',
+            data: {
+            message: 'Hello Vue!'
+            }
+        })*/
+    </script>
+</body>
+</html>

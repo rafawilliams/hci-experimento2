@@ -1,0 +1,25 @@
+body {
+    padding-top: 5rem;
+}
+.starter-template {
+padding: 1.5rem 1.5rem;
+text-align: center;
+}
+#cuadro-experimento{
+    width: 320px;
+    height: 200px;
+    border: #000 solid 1px;
+    margin: 20px auto;
+}
+.color-azul{
+    background-color: #18528b;
+}
+.color-rojo{
+    background-color: red;
+}  
+.resultado{
+    position: absolute;
+    z-index: 200;
+    top: 200px;
+    margin-left: 240px;
+}
